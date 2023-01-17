@@ -10,10 +10,10 @@ function App() {
     return (
         <div className="App">
             <Container>
-                <Row className="d-flex align-items-center viewPortHeight100">
+                <Row className="d-flex align-items-center text-center viewport-height-100">
                     <Col>
-                        <h1>Kuinka aamuntorkku olet?</h1>
-                        <p>Tee tämä testi niin tiedät!</p>
+                        <h1 className="mb-5">Kuinka aamuntorkku olet?</h1>
+                        <p className="mb-3">Tee tämä testi niin tiedät!</p>
                         <Button variant="primary">Tee testi</Button>
                     </Col>
                 </Row>
