@@ -1,25 +1,57 @@
+import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
+import LandingPage from './components/LandingPage';
+import Test from './components/Test';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 
-function App() {
+export default function App() {
+    const [currentStep, setCurrentStep] = useState(0);
+    const totalSteps = 2;
+
+    const startOver = () => {
+        setCurrentStep(0);
+    };
+
+    const nextPhase = () => {
+        setCurrentStep(currentStep + 1);
+    };
+
+    const previousPhase = () => {
+        setCurrentStep(currentStep - 1);
+    };
+
     return (
         <div className="App">
-            <Container>
-                <Row className="d-flex align-items-center text-center viewport-height-100">
-                    <Col>
-                        <h1 className="mb-5">Kuinka aamuntorkku olet?</h1>
-                        <p className="mb-3">Tee tämä testi niin tiedät!</p>
-                        <Button variant="primary">Tee testi</Button>
-                    </Col>
-                </Row>
+            <Container className="p-2 border border-2">
+                {/* Use Form component from react-bootstrap.
+                 */}
+                {currentStep > 0 && (
+                    <Button variant="outline-dark" onClick={() => startOver()}>
+                        Alkuun
+                    </Button>
+                )}
+
+                {currentStep === 0 && <LandingPage nextPhase={nextPhase} />}
+                {currentStep > 0 && <Test currentStep={currentStep} />}
+
+                <Stack direction="horizontal" gap={3}>
+                    {currentStep > 1 && (
+                        <Button variant="secondary" onClick={() => previousPhase()}>
+                            Edellinen
+                        </Button>
+                    )}
+                    {currentStep >= 1 && currentStep < totalSteps && (
+                        <Button variant="primary" onClick={() => nextPhase()}>
+                            Seuraava
+                        </Button>
+                    )}
+                    {currentStep === totalSteps && <Button variant="success">Lähetä</Button>}
+                </Stack>
             </Container>
         </div>
     );
 }
-
-export default App;
