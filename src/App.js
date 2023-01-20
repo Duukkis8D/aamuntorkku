@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import LandingPage from './components/LandingPage';
 import Test from './components/Test';
 
@@ -27,30 +28,34 @@ export default function App() {
     return (
         <div className="App">
             <Container className="p-2 border border-2">
-                {/* Use Form component from react-bootstrap.
-                 */}
-                {currentStep > 0 && (
-                    <Button variant="outline-dark" onClick={() => startOver()}>
-                        Aloita uudestaan
-                    </Button>
-                )}
-
-                {currentStep === 0 && <LandingPage nextPhase={nextPhase} />}
-                {currentStep > 0 && <Test currentStep={currentStep} />}
-
-                <Stack direction="horizontal" gap={3}>
-                    {currentStep > 1 && (
-                        <Button variant="secondary" onClick={() => previousPhase()}>
-                            Edellinen
+                <Form>
+                    {currentStep > 0 && (
+                        <Button variant="outline-dark" onClick={() => startOver()}>
+                            Aloita uudestaan
                         </Button>
                     )}
-                    {currentStep >= 1 && currentStep < totalSteps && (
-                        <Button variant="primary" onClick={() => nextPhase()}>
-                            Seuraava
-                        </Button>
-                    )}
-                    {currentStep === totalSteps && <Button variant="success">Lähetä</Button>}
-                </Stack>
+
+                    {currentStep === 0 && <LandingPage nextPhase={nextPhase} />}
+                    {currentStep > 0 && <Test currentStep={currentStep} />}
+
+                    <Stack direction="horizontal" gap={3}>
+                        {currentStep > 1 && (
+                            <Button variant="secondary" onClick={() => previousPhase()}>
+                                Edellinen
+                            </Button>
+                        )}
+                        {currentStep >= 1 && currentStep < totalSteps && (
+                            <Button variant="primary" onClick={() => nextPhase()}>
+                                Seuraava
+                            </Button>
+                        )}
+                        {currentStep === totalSteps && (
+                            <Button variant="success" type="submit">
+                                Lähetä
+                            </Button>
+                        )}
+                    </Stack>
+                </Form>
             </Container>
         </div>
     );
