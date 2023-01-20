@@ -31,7 +31,7 @@ export default function App() {
                  */}
                 {currentStep > 0 && (
                     <Button variant="outline-dark" onClick={() => startOver()}>
-                        Alkuun
+                        Aloita uudestaan
                     </Button>
                 )}
 
