@@ -7,7 +7,7 @@ export default function Step1() {
         <Row>
             <Col>
                 <Form.Group>
-                    <Form.Label htmlFor="step1RadioButton" className="fs-1">
+                    <Form.Label htmlFor="step1RadioButton" className="h1">
                         Kuinka monta herätyskelloa tarvitset herätäksesi?
                     </Form.Label>
                     <Form.Check
