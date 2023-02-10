@@ -6,12 +6,12 @@ import Form from 'react-bootstrap/Form';
 import LandingPage from './components/LandingPage';
 import Test from './components/Test';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/App.css';
+import './styles/App.scss';
 
 export default function App() {
     const [currentStep, setCurrentStep] = useState(0);
-    const totalSteps = 2;
+    const totalSteps = 3;
+    const [formData, setFormData] = useState({});
 
     const startOver = () => {
         setCurrentStep(0);
@@ -25,6 +25,17 @@ export default function App() {
         setCurrentStep(currentStep - 1);
     };
 
+    const handleChange = (name, value) => {
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleChangeReactSelect = (optionName, optionComponent) => {
+        setFormData({
+            ...formData,
+            [optionName]: { label: optionComponent.label, value: optionComponent.value }
+        });
+    };
+
     return (
         <div className="App">
             <Container className="p-2 border border-2">
@@ -36,7 +47,14 @@ export default function App() {
                     )}
 
                     {currentStep === 0 && <LandingPage nextPhase={nextPhase} />}
-                    {currentStep > 0 && <Test currentStep={currentStep} />}
+                    {currentStep > 0 && (
+                        <Test
+                            currentStep={currentStep}
+                            formData={formData}
+                            handleChange={handleChange}
+                            handleChangeReactSelect={handleChangeReactSelect}
+                        />
+                    )}
 
                     <Stack direction="horizontal" gap={3}>
                         {currentStep > 1 && (
