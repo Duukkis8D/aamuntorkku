@@ -1,8 +1,11 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons.scss';
 
+$container-padding: calc(2 * 0.5rem);
+$container-border-width: calc(2 * 3px);
+
 .viewport-height-100 {
-    min-height: 100vh;
+    min-height: calc(100vh - #{$container-padding} - #{$container-border-width});
 }
 
 .h1 {

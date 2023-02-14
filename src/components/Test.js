@@ -1,5 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
@@ -52,14 +54,16 @@ export default function Test({
     };
 
     return (
-        <>
-            {currentStep > 0 && (
-                <Button variant="outline-dark" onClick={() => startOver()}>
-                    Aloita uudestaan
-                </Button>
-            )}
-            {renderStep()}
-            {renderNavigation()}
-        </>
+        <Row className="d-flex align-items-center text-center viewport-height-100">
+            <Col>
+                {currentStep > 0 && (
+                    <Button variant="outline-dark" onClick={() => startOver()}>
+                        Aloita uudestaan
+                    </Button>
+                )}
+                {renderStep()}
+                {renderNavigation()}
+            </Col>
+        </Row>
     );
 }

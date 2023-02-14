@@ -36,8 +36,8 @@ export default function App() {
 
     return (
         <div className="App">
-            <Container className="p-2 border border-primary border-3 rounded">
-                <Form className="viewport-height-100">
+            <Container className="p-2 border border-primary border-3 rounded viewport-height-100">
+                <Form>
                     {currentStep === 0 && <LandingPage nextPhase={nextPhase} />}
                     {currentStep > 0 && (
                         <Test
