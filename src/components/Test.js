@@ -33,7 +33,11 @@ export default function Test({
 
     const renderNavigation = () => {
         return (
-            <Stack direction="horizontal" gap={3}>
+            <Stack
+                direction="horizontal"
+                gap={3}
+                id="navigation-menu"
+                className="d-flex align-items-end justify-content-center h-25">
                 {currentStep > 1 && (
                     <Button variant="secondary" onClick={() => previousPhase()}>
                         Edellinen
@@ -54,12 +58,17 @@ export default function Test({
     };
 
     return (
-        <Row className="d-flex align-items-center text-center viewport-height-100">
+        <Row id="test-page" className="d-flex col-sm-11 col-lg-8 mx-auto min-vh-100">
             <Col>
                 {currentStep > 0 && (
-                    <Button variant="outline-dark" onClick={() => startOver()}>
-                        Aloita uudestaan
-                    </Button>
+                    <Stack
+                        direction="horizontal"
+                        id="start-over-button"
+                        className="d-flex align-items-start justify-content-end h-25">
+                        <Button variant="outline-dark" onClick={() => startOver()}>
+                            Aloita uudestaan
+                        </Button>
+                    </Stack>
                 )}
                 {renderStep()}
                 {renderNavigation()}

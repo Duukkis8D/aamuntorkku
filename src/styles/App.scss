@@ -1,18 +1,30 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons.scss';
 
-$container-padding: calc(2 * 0.5rem);
-$container-border-width: calc(2 * 3px);
+$outer-container-padding: calc(2 * 0.5rem);
+$inner-container-padding: calc(2 * 1rem);
+$inner-container-border-width: calc(2 * 3px);
 
-.viewport-height-100 {
-    min-height: calc(100vh - #{$container-padding} - #{$container-border-width});
+// X-Small devices (portrait phones, less than 576px)
+.min-vh-100 {
+    min-height: calc(
+        100vh - #{$outer-container-padding} - #{$inner-container-padding} - #{$inner-container-border-width}
+    ) !important;
 }
 
 .h1 {
-    font-size: 2rem;
+    margin-bottom: 1rem;
+    @include font-size(1.5rem);
 }
 
 .bi-check {
     font-size: 1.5rem;
     color: green;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    h1 {
+        margin-bottom: 1.5rem;
+    }
 }

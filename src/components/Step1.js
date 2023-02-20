@@ -4,12 +4,13 @@ import { Form } from 'react-bootstrap';
 
 export default function Step1() {
     return (
-        <Row>
+        <Row id="step-1-page" className="h-50">
             <Col>
                 <Form.Group>
                     <Form.Label htmlFor="step1RadioButton" className="h1">
                         Kuinka monta herätyskelloa tarvitset herätäksesi?
                     </Form.Label>
+
                     <Form.Check
                         type="radio"
                         name="step1RadioButton"

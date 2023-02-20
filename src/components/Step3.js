@@ -11,7 +11,7 @@ const options = [
 
 export default function Step3({ formData, handleChangeReactSelect }) {
     return (
-        <Row>
+        <Row id="step-3-page" className="h-50">
             <Col>
                 <Form.Group>
                     <Form.Label htmlFor="step3ReactSelect" className="h1">
