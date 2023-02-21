@@ -13,6 +13,15 @@ export default function Step1({ formData, handleChange }) {
                     <Form.Check
                         type="radio"
                         name="step1RadioButton"
+                        id="step1RadioButton0"
+                        label="0"
+                        value="0"
+                        onChange={(event) => handleChange('step1RadioButton', event.target.value)}
+                        checked={formData.step1RadioButton === '0'}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="step1RadioButton"
                         id="step1RadioButton1"
                         label="1"
                         value="1"
