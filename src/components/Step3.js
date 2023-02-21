@@ -22,9 +22,9 @@ export default function Step3({ formData, handleChangeReactSelect }) {
                         name="step3ReactSelect"
                         placeholder="Valitse yksi"
                         options={options}
-                        defaultValue={formData?.step3}
+                        defaultValue={formData.step3ReactSelect}
                         onChange={(selectOption) =>
-                            handleChangeReactSelect('step3', selectOption)
+                            handleChangeReactSelect('step3ReactSelect', selectOption)
                         }></GenericSelect>
                 </Form.Group>
             </Col>
