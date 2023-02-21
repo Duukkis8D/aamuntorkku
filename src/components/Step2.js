@@ -14,20 +14,20 @@ export default function Step2({ formData, handleChange }) {
                     <Form.Check
                         type="radio"
                         name="step2RadioButton"
-                        id="step2RadioButtonYes"
-                        label="kyllä"
-                        value="kyllä"
-                        onChange={(event) => handleChange('step2RadioButton', event.target.value)}
-                        checked={formData.step2RadioButton === 'kyllä'}
-                    />
-                    <Form.Check
-                        type="radio"
-                        name="step2RadioButton"
                         id="step2RadioButtonNo"
                         label="ei"
                         value="ei"
                         onChange={(event) => handleChange('step2RadioButton', event.target.value)}
                         checked={formData.step2RadioButton === 'ei'}
+                    />
+                    <Form.Check
+                        type="radio"
+                        name="step2RadioButton"
+                        id="step2RadioButtonYes"
+                        label="kyllä"
+                        value="kyllä"
+                        onChange={(event) => handleChange('step2RadioButton', event.target.value)}
+                        checked={formData.step2RadioButton === 'kyllä'}
                     />
                 </Form.Group>
             </Col>
