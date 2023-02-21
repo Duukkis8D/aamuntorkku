@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
+import Step4 from './Step4';
 
 export default function Test({
     currentStep,
@@ -25,6 +26,10 @@ export default function Test({
             case 3:
                 return (
                     <Step3 formData={formData} handleChangeReactSelect={handleChangeReactSelect} />
+                );
+            case 4:
+                return (
+                    <Step4 formData={formData} handleChangeReactSelect={handleChangeReactSelect} />
                 );
             default:
                 console.error('Could not show test steps.');
