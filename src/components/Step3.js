@@ -4,9 +4,12 @@ import { Form } from 'react-bootstrap';
 import GenericSelect from './GenericSelect';
 
 const options = [
-    { value: 'testi1', label: 'testi 1' },
-    { value: 'testi2', label: 'testi 2' },
-    { value: 'testi3', label: 'testi 3' }
+    {
+        value: 'jesUlkonaOn',
+        label: 'Jes, ulkona on vielä pimeää. Nousen nyt ylös eli taidan olla energisempi kuin aurinko!'
+    },
+    { value: 'oijoiLinnut', label: 'Oijoi! Linnut alkoivat laulaa. Kukakohan siellä visertää?' },
+    { value: 'jalkaniEivät', label: 'Jalkani eivät liiku, kuka auttaisi minut ylös?' }
 ];
 
 export default function Step3({ formData, handleChangeReactSelect }) {
@@ -16,7 +19,7 @@ export default function Step3({ formData, handleChangeReactSelect }) {
                 <Form.Group>
                     <Form.Label htmlFor="step3ReactSelect" className="h1">
                         Mikä seuraavista vaihtoehdoista kuvaa parhaiten tilannetta, jossa makaat
-                        sängyssä ja mietit ylös nousemista?
+                        sängyssä ja olisi aika nousta ylös?
                     </Form.Label>
                     <GenericSelect
                         name="step3ReactSelect"
