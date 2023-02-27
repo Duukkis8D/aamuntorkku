@@ -6,6 +6,7 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
+import Step5 from './Step5';
 
 export default function Test({
     currentStep,
@@ -31,6 +32,8 @@ export default function Test({
                 return (
                     <Step4 formData={formData} handleChangeReactSelect={handleChangeReactSelect} />
                 );
+            case 5:
+                return <Step5 formData={formData} handleChange={handleChange} />;
             default:
                 console.error('Could not show test steps.');
         }
