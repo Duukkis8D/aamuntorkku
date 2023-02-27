@@ -8,7 +8,7 @@ import './styles/App.scss';
 
 export default function App() {
     const [currentStep, setCurrentStep] = useState(0);
-    const totalSteps = 5;
+    const totalSteps = 6;
     const [formData, setFormData] = useState({});
 
     const startOver = () => {
